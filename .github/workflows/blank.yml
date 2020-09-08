@@ -47,4 +47,3 @@ jobs:
       - run: ls -l bin/Debug/*.nupkg
 
       - run: nuget push bin/Debug/*.nupkg
-
