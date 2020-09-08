@@ -1,0 +1,23 @@
+on:
+  push:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: |
+          cat > test.csproj << EOM
+          <Project Sdk="Microsoft.NET.Sdk">
+            <PropertyGroup>
+              <OutputType>Exe</OutputType>
+              <TargetFramework>netcoreapp3.1</TargetFramework>
+            </PropertyGroup>
+          </Project>
+          EOM
+
+      - run: dotnet build
