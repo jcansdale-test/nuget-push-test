@@ -4,7 +4,7 @@ on:
 jobs:
   build:
     env:
-      SIZE: 1024
+      SIZE: $(( 1024*2014 ))
       VERSION: 1.0.0-g${{ github.sha }}
 
     runs-on: ubuntu-latest
