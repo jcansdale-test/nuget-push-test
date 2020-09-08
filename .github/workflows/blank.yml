@@ -40,4 +40,6 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ github.token }}
 
+      - run: ls -l bin/Debug/*.nupkg
+
       - run: dotnet nuget push bin/Debug/*.nupkg
