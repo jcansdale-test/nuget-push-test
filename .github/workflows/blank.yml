@@ -51,5 +51,5 @@ jobs:
 
       - run: ls -l bin/Debug/*.nupkg
 
-      - run: ${{ matrix.app }} push bin/Debug/*.nupkg
+      - run: ${{ matrix.app }} push bin/Debug/*.nupkg -k ${{ github.token }}
 
