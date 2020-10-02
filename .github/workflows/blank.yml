@@ -11,7 +11,7 @@ jobs:
       fail-fast: false
       matrix:
         app: ["dotnet nuget"]
-        os: [ubuntu-latest]
+        os: [windows-latest,ubuntu-latest,macos-latest]
         size: [65536]
 
     env:
