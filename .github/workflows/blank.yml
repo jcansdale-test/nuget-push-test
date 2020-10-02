@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        options: ["", " -k ${{ github.token }}"]
+        options: ["", " -k ${GITHUB_TOKEN}"]
         app: ["dotnet nuget"]
         os: [windows-latest,ubuntu-latest,macos-latest]
         size: [65536]
@@ -53,4 +53,6 @@ jobs:
       - run: ls -l bin/Debug/*.nupkg
 
       - run: ${{ matrix.app }} push bin/Debug/*.nupkg ${{ matrix.options }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
