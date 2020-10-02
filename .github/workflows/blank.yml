@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        options: ["", " -k ${GITHUB_TOKEN}"]
+        options: ["", " -k ${GITHUB_TOKEN}", " -k x"]
         app: ["dotnet nuget"]
         os: [windows-latest,ubuntu-latest,macos-latest]
         size: [65536]
